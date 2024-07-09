@@ -1,0 +1,22 @@
+   <div class="navBtns">
+        <button class="generateArrBtn">GENERATE A RANDOM ARRAY</button>
+        <div class="sliderCont">
+            <label for="speedSlider" class="animSpeedTxt"></label><br>
+            <input name="speedSlider" step="100" type="range" min="100" max="1000" value="500" class="speedSlider">
+        </div>
+        <button class="sortBtn">SORT!</button>
+    </div>
+    <input type="text" class="userInput" placeholder="Enter whole numbers within range 50 to 500">
+
+
+
+
+
+function getUserInput() {
+  let str = userInput.value;
+  let tArr = str.split(',');
+  tArr = tArr.filter((el) => {
+    if (el >= 1) return el;
+  });
+  return tArr;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insertion Sort</title>
+    <link rel="stylesheet" href="insertion.css" type="text/css" />
+    <script src="../../minified/gsap.min.js" defer></script>
+    <script src="insertion.js" defer></script>
+    <script src="../../particles.js" defer></script>
+</head>
+
+<body>
+    <canvas class="canvas1"></canvas>
+    <section class="container">
+        <h1 class="algo-name">INSERTION SORT</h1>
+        <div class="bar-container">
+        </div>
+    </section>
+    <div class="navBtns">
+        <button class="generateArrBtn">GENERATE A RANDOM ARRAY</button>
+        <div class="sliderCont">
+            <label for="speedSlider" class="animSpeedTxt"></label><br>
+            <input name="speedSlider" step="100" type="range" min="100" max="1000" value="500" class="speedSlider">
+        </div>
+        <button class="sortBtn">SORT!</button>
+    </div>
+    <input type="text" class="userInput" placeholder="Enter whole numbers within range 50 to 500">
+    <div class="description">
+        <h1>DESCRIPTION</h1>
+        Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It's less
+        performant than advanced sorting algorithms, but it can still have some advantages: it's really easy to
+        implement and it's efficient on small data structures almost sorted.
+        <br><br>
+        The algorithm divides the data structure in two sublists: a sorted one, and one still to sort. Initially, the
+        sorted sublist is made up of just one element and it gets progressively filled. For every iteration, the
+        algorithm picks an element on the unsorted sublist and inserts it at the right place in the sorted sublist. It's
+        available in several variants such as Gnome Sort.
+    </div>
+    <div class="complexity">
+        <h1>COMPLEXITY</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Average Complexity</td>
+                <td>O(n<sup>2</sup>)</td>
+
+
+            </tr>
+            <tr>
+                <td>Best Case</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Worst Case</td>
+                <td>O(n<sup>2</sup>)</td>
+            </tr>
+            <tr>
+                <td>Space Complexity</td>
+                <td>O(1)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="implementations">
+        <h1>PSEUDOCODE</h1>
+        <pre>
+procedure insertionSort( A : array of items )
+    int holePosition
+    int valueToInsert
+             
+    for i = 1 to length(A) inclusive do:
+             
+        /* select value to be inserted */
+        valueToInsert = A[i]
+        holePosition = i
+               
+        /*locate hole position for the element to be inserted */
+                 
+        while holePosition > 0 and A[holePosition-1] > valueToInsert do:
+            A[holePosition] = A[holePosition-1]
+            holePosition = holePosition -1
+            end while
+                 
+        /* insert the number at hole position */
+            A[holePosition] = valueToInsert
+               
+        end for
+             
+end procedure
+        </pre>
+    </div>
+</body>
+
+</html>

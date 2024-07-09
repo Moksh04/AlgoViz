@@ -1,0 +1,55 @@
+function AStar(grid) {
+  start.h = calcH(start);
+  start.f = start.h + start.g;
+  openList.push(start);
+
+  for (let i = 0; i < 100000; i++) {
+    let current = minF(openList);
+    let nbrs;
+    if ((openList.length == 0 || current == target) && i > 0) break;
+    closedList.push(current);
+
+    if (!current.isWall) nbrs = current.neighbours(grid);
+
+    for (let i = 0; i < nbrs.length; i++) {
+      if (!nbrs[i].isWall && !closedList.includes(nbrs[i])) {
+        let tempG;
+        if (!nbrs[i].isDiagNb) tempG = 10 + current.g;
+        else tempG = 14 + current.g;
+        if (!openList.includes(nbrs[i])) {
+          openList.push(nbrs[i]);
+          nbrs[i].parent = current;
+          nbrs[i].g = tempG;
+          nbrs[i].h = calcH(nbrs[i]);
+          nbrs[i].f = nbrs[i].g + nbrs[i].h;
+        }
+        // if node is already on the list
+        else {
+          if (tempG < nbrs[i].g) {
+            nbrs[i].parent = current;
+            nbrs[i].g = tempG;
+            nbrs[i].f = nbrs[i].g + nbrs[i].h;
+          }
+        }
+      }
+    }
+    removeFrom(openList, current);
+    for (let nb of nbrs) nb.isDiagNb = false;
+  }
+}
+
+// AStar(grid);
+
+for (let c of openList) c.color = 'lightgreen';
+
+for (let c of closedList) c.color = 'skyblue';
+
+// Tracing the path
+let s = target;
+while (s.parent) {
+  s.color = 'blue';
+  s = s.parent;
+}
+target.color = 'green';
+start.color = 'red';
+gridObj.drawGrid();

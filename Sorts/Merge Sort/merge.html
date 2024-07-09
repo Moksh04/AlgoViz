@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge Sort</title>
+    <link rel="stylesheet" href="merge.css" type="text/css" />
+    <script src="../../minified/gsap.min.js" defer></script>
+    <script src="merge.js" defer></script>
+    <script src="../../particles.js" defer></script>
+</head>
+
+<body>
+    <canvas class="canvas1"></canvas>
+    <section class="container">
+        <h1 class="algo-name">MERGE SORT</h1>
+        <span class="choose1 activeSort">Iterative</span>
+        <span class="choose2">Recursive</span>
+        <div class="bar-container">
+        </div>
+    </section>
+    <div class="navBtns">
+        <button class="generateArrBtn">GENERATE A RANDOM ARRAY</button>
+        <div class="sliderCont">
+            <label for="speedSlider" class="animSpeedTxt"></label><br>
+            <input name="speedSlider" step="100" type="range" min="100" max="1000" value="500" class="speedSlider">
+        </div>
+        <button class="sortBtn">SORT!</button>
+    </div>
+    <input type="text" class="userInput" placeholder="Enter whole numbers within range 50 to 500">
+    <div class="description">
+        <h1>DESCRIPTION</h1>
+        Merge Sort is a sorting algorithm based on the Divide et Impera technique, like Quick Sort. It can be
+        implemented iteratively or recursively, using the Top-Down and Bottom-Up algorithms respectively. We represented
+        the first one.
+        <br><br>
+        The algorithm divides the data structure recursively until the subsequences contain only one element. At this
+        point, the subsequences get merged and ordered sequentially. To do so, the algorithm progressively builds the
+        sorted sublist by adding each time the minimum element of the next two unsorted subsequences until there is only
+        one sublist remaining. This will be the sorted data structure.
+    </div>
+    <div class="complexity">
+        <h1>COMPLEXITY</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Average Complexity</td>
+                <td>O(n × log n)</td>
+
+
+            </tr>
+            <tr>
+                <td>Best Case</td>
+                <td>O(n × log n)</td>
+            </tr>
+            <tr>
+                <td>Worst Case</td>
+                <td>O(n × log n)</td>
+            </tr>
+            <tr>
+                <td>Space Complexity</td>
+                <td>O(n)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="implementations">
+        <h1>PSEUDOCODE</h1>
+        <pre>
+procedure mergesort( var a as array )
+   if ( n == 1 ) return a
+
+   var l1 as array = a[0] ... a[n/2]
+   var l2 as array = a[n/2+1] ... a[n]
+
+   l1 = mergesort( l1 )
+   l2 = mergesort( l2 )
+
+   return merge( l1, l2 )
+end procedure
+
+procedure merge( var a as array, var b as array )
+
+   var c as array
+   while ( a and b have elements )
+      if ( a[0] > b[0] )
+         add b[0] to the end of c
+         remove b[0] from b
+      else
+         add a[0] to the end of c
+         remove a[0] from a
+      end if
+   end while
+   
+   while ( a has elements )
+      add a[0] to the end of c
+      remove a[0] from a
+   end while
+   
+   while ( b has elements )
+      add b[0] to the end of c
+      remove b[0] from b
+   end while
+   
+   return c
+	
+end procedure
+        </pre>
+    </div>
+</body>
+
+</html>

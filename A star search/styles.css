@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Neutraliser Bold';
+  src: url('../Fonts/Neutraliser\ Sans\ Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Neutraliser';
+  src: url('../Fonts/Neutraliser\ Sans\ Regular.ttf');
+}
+
+body {
+  background: linear-gradient(145deg, rgb(232, 54, 54), rgb(54, 232, 87));
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.algo-name {
+  font-family: 'Neutraliser Bold';
+  font-size: 3.2em;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: white;
+}
+
+.canvas1 {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.cont {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0 20em;
+}
+
+input[type='number'],
+button {
+  font-family: 'Neutraliser';
+  padding: 0.2em 2em;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in;
+  align-self: center;
+  outline: none;
+  border: none;
+  font-size: large;
+  width: 16em;
+}
+
+.btnCont {
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em 0;
+  gap: 1em;
+}
+
+.canvasG {
+  border: 1px solid black;
+}
+
+.startBtn {
+  padding: 0.2em 2em;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Sort</title>
+    <link rel="stylesheet" href="quick.css" type="text/css" />
+    <script src="../../minified/gsap.min.js" defer></script>
+    <script src="../../particles.js" defer></script>
+    <script src="quick.js" defer></script>
+</head>
+
+<body>
+    <canvas class="canvas1"></canvas>
+    <section class="container">
+        <h1 class="algo-name">QUICK SORT</h1>
+        <span class="choose1 activeSort">Last Pivot</span>
+        <span class="choose2">Mid Pivot</span>
+        <div class="bar-container">
+        </div>
+    </section>
+    <div class="navBtns">
+        <button class="generateArrBtn">GENERATE A RANDOM ARRAY</button>
+        <div class="sliderCont">
+            <label for="speedSlider" class="animSpeedTxt"></label><br>
+            <input name="speedSlider" step="100" type="range" min="100" max="1000" value="500" class="speedSlider">
+        </div>
+        <button class="sortBtn">SORT!</button>
+    </div>
+    <input type="text" class="userInput" placeholder="Enter whole numbers within range 50 to 500">
+    <div class="description">
+        <h1>DESCRIPTION</h1>
+        Quick Sort is a sorting algorithm based on splitting the data structure in smaller partitions and sort them
+        recursively until the data structure is sorted.
+        <br><br>
+        This division in partitions is done based on an element, called pivot: all the elements bigger than the pivot
+        get placed on the right side of the structure, the smaller ones to the left, creating two partitions. Next, this
+        procedure gets applied recursively to the two partitions and so on.
+        <br><br>
+        This partition technique based on the pivot is called Divide and conquer. It's a performant strategy also used
+        by other sorting algorithms, such as Merge Sort.
+    </div>
+    <div class="complexity">
+        <h1>COMPLEXITY</h1>
+        <table>
+            <tr>
+                <th>Case</th>
+                <th>Asymptotic Notation</th>
+            </tr>
+            <tr>
+                <td>Average Complexity</td>
+                <td>O(n × log n)</td>
+
+
+            </tr>
+            <tr>
+                <td>Best Case</td>
+                <td>O(n × log n)</td>
+            </tr>
+            <tr>
+                <td>Worst Case</td>
+                <td>O(n<sup>2</sup>)</td>
+            </tr>
+            <tr>
+                <td>Space Complexity</td>
+                <td>O(n)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="implementations">
+        <h1>PSEUDOCODE</h1>
+        <pre>
+partition(arr, beg, end)
+    set end as pivotIndex
+    pIndex = beg - 1
+    for i = beg to end-1
+        if arr[i] less than pivot
+            swap arr[i] and arr[pIndex]
+            pIndex++
+    swap pivot and arr[pIndex+1]
+return pIndex + 1
+
+quickSort(arr, beg, end)
+    if (beg less than end)
+        pivotIndex = partition(arr,beg, end)
+        quickSort(arr, beg, pivotIndex)
+        quickSort(arr, pivotIndex + 1, end)    
+        </pre>
+    </div>
+</body>
+
+</html>

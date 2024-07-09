@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --headColor: rgb(255 83 248);
+}
+@font-face {
+  font-family: 'Neutraliser';
+  src: url('./Fonts/Neutraliser\ Sans\ Regular.ttf');
+}
+@font-face {
+  font-family: 'Neutraliser Bold';
+  src: url('./Fonts/Neutraliser\ Sans\ Bold.ttf');
+}
+
+body {
+  background: linear-gradient(45deg, rgba(97, 9, 184, 0.9), rgb(39, 0, 39));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Neutraliser';
+}
+
+.canvas1 {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.heroText {
+  height: fit-content;
+  width: fit-content;
+  border-right: 10px solid red;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 10em;
+  padding-right: 2px;
+  position: absolute;
+  right: 5%;
+  top: 40%;
+  opacity: 0;
+  transform-origin: bottom;
+  overflow: hidden;
+  font-family: 'Neutraliser Bold';
+}
+
+.heroText :nth-child(2) {
+  align-self: flex-end;
+}
+
+.container {
+  width: 100vw;
+  height: fit-content;
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 2em;
+}
+
+.canvas2 {
+  /* Change this */
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(1);
+  background: linear-gradient(45deg, rgb(97, 9, 184), rgb(39, 0, 39));
+  transition: opacity 1s ease-in;
+}
+
+.open {
+  position: fixed;
+  height: 0;
+  width: 0;
+}
+
+.sorts {
+  padding: 0 8em;
+  font-size: 20px;
+  text-align: justify;
+  color: white;
+  font-weight: bold;
+}
+
+.sorts > h1 {
+  color: var(--headColor);
+  font-family: 'Neutraliser Bold';
+  font-size: 3em;
+  padding-bottom: 10px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.sorts > span {
+  color: var(--headColor);
+  font-size: 1.2em;
+  font-family: 'Neutraliser Bold';
+  font-weight: bold;
+}
+
+.mazeGen {
+  padding: 0 8em;
+  font-size: 20px;
+  text-align: justify;
+  color: white;
+  font-weight: bold;
+}
+
+.mazeGen > h1 {
+  color: var(--headColor);
+  font-family: 'Neutraliser Bold';
+  font-size: 3em;
+  padding-bottom: 10px;
+  padding-top: 1em;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.selectBtn {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  top: 20px;
+  left: 48px;
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.selMenu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(39, 0, 39);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-bottom-right-radius: 50px;
+}
+
+.selMenu h1 {
+  color: #818181;
+  padding: 8px 8px 8px 32px;
+}
+
+.selMenu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.selMenu a:hover {
+  color: #f1f1f1;
+}
+
+.selMenu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.container h1 :hover {
+  transform: translateX(50px);
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(39, 0, 39);
+  color: white;
+  text-align: center;
+  padding: 2em 0;
+  line-height: 1.5em;
+}
+
+.footer > h1 {
+  font-weight: bold;
+}
+
+.footer > p {
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: 0.2s ease-in;
+}
+
+.footer > p:hover {
+  transform: scale(1.1);
+}

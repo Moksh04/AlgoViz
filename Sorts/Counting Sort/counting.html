@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counting Sort</title>
+    <link rel="stylesheet" href="counting.css" type="text/css" />
+    <script src="../../minified/gsap.min.js" defer></script>
+    <script src="../../minified/TextPlugin.min.js" defer></script>
+    <script src="counting.js" defer></script>
+    <script src="../../particles.js" defer></script>
+</head>
+
+<body>
+    <section class="container">
+        <canvas class="canvas1"></canvas>
+        <h1 class="algo-name">COUNTING SORT</h1>
+        <div class="bar-container">
+        </div>
+    </section>
+    <div class="navBtns">
+        <button class="generateArrBtn">GENERATE A RANDOM ARRAY</button>
+        <div class="sliderCont">
+            <label for="speedSlider" class="animSpeedTxt"></label><br>
+            <input name="speedSlider" step="10" type="range" min="100" max="1000" value="500" class="speedSlider">
+        </div>
+        <button class="sortBtn">SORT!</button>
+    </div>
+    <input type="text" class="userInput" placeholder="Enter whole numbers within range 1 to 10">
+    <div class="description">
+        <h1>DESCRIPTION</h1>
+        Counting sort is an integer sorting algorithm used in computer science to collect objects according to keys that
+        are small positive integers.
+        <br><br>
+        It works by determining the positions of each key value in the output sequence by counting the number of objects
+        with distinct key values and applying prefix sum to those counts.
+        <br><br>
+        Because its running duration is proportional to the number of items and the difference between the maximum and
+        minimum key values, it is only suited for direct usage when the number of items is not much more than the
+        variation in keys.
+        <br><br>
+        It's frequently used as a subroutine in radix sort, a more efficient sorting method for larger keys.
+    </div>
+    <div class="complexity">
+        <h1>COMPLEXITY</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Average Complexity</td>
+                <td>O(n+k)</td>
+
+
+            </tr>
+            <tr>
+                <td>Best Case</td>
+                <td>O(n+k)</td>
+            </tr>
+            <tr>
+                <td>Worst Case</td>
+                <td>O(n+k)</td>
+            </tr>
+            <tr>
+                <td>Space Complexity</td>
+                <td>O(k)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="implementations">
+        <h1>PSEUDOCODE</h1>
+        <pre>
+Counting_Sort( array, ele ) // ele is number of elements in the array
+
+max = discover the array's biggest element
+            
+Create a count array of maximum + 1 size and fill it with all 0s.
+            
+for i = 0 to ele
+    discover the total number of occurrences of each element and save the count in the count array at the index.
+            
+for i = 0 to max
+    Add the current(i) and previous(i-1) counts to get the cumulative sum, which you may save in the count array.
+            
+For j = ele down to 1
+    Decrement the count of each element copied by one before copying it back into the input array.
+        </pre>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heap Sort</title>
+    <link rel="stylesheet" href="heap.css" type="text/css" />
+    <script src="../../minified/gsap.min.js" defer></script>
+    <script src="heap.js" defer></script>
+    <script src="../../particles.js" defer></script>
+</head>
+
+<body>
+    <canvas class="canvas1"></canvas>
+    <section class="container">
+        <h1 class="algo-name">HEAP SORT</h1>
+        <div class="bar-container">
+        </div>
+    </section>
+    <div class="navBtns">
+        <button class="generateArrBtn">GENERATE A RANDOM ARRAY</button>
+        <div class="sliderCont">
+            <label for="speedSlider" class="animSpeedTxt"></label><br>
+            <input name="speedSlider" step="100" type="range" min="100" max="1000" value="500" class="speedSlider">
+        </div>
+        <button class="sortBtn">SORT!</button>
+    </div>
+    <input type="text" class="userInput" placeholder="Enter whole numbers within range 50 to 500">
+    <div class="description">
+        <h1>DESCRIPTION</h1>
+        Heap Sort is an in-place iterative sorting algorithm based on auxiliary data structures called heap. It's less
+        efficient than algorithm with the same time complexity and it's not suitable for data structures with few
+        elements.
+        <br><br>
+        The heap is a data structure representable as a binary tree, where each node has a value bigger or equal to its
+        children. Consequently, the root will hold the maximum value.
+        <br><br>
+        The data structure gets ordered to form the heap initially, and then it gets progressively reordered with an
+        algorithm similar to Selection Sort, starting from the bigger elements.
+    </div>
+    <div class="complexity">
+        <h1>COMPLEXITY</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Average Complexity</td>
+                <td>O(n × log n)</td>
+
+
+            </tr>
+            <tr>
+                <td>Best Case</td>
+                <td>O(n × log n)</td>
+            </tr>
+            <tr>
+                <td>Worst Case</td>
+                <td>O(n × log n)</td>
+            </tr>
+            <tr>
+                <td>Space Complexity</td>
+                <td>O(1)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="implementations">
+        <h1>PSEUDOCODE</h1>
+        <pre>
+
+heapify(arr , i)
+    leftChild = arr [2*0 + 1];
+    rightChild = arr [2*0 + 2];
+    maxIndex = max( arr[i], leftChild, rightChild)
+    if(i != maxIndex)
+        swap(arr[i], arr[maxIndex])
+
+buildMaxHeap(arr)
+    for(int i = n / 2 - 1; i >= 0; i--)
+        heapify(arr, i);
+
+Heapsort(arr)
+    buildMaxHeap(arr)
+    for (int i = n - 1; i >= 0; i--) {
+        swap(&arr[0], &arr[i]);
+    heapsize--;
+    maxHeapify(arr,0);
+    }
+        </pre>
+    </div>
+</body>
+
+</html>
